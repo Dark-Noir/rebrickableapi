@@ -15,6 +15,7 @@
  */
 package org.dajlab.rebrickableapi.v3.service;
 
+import org.dajlab.rebrickableapi.v3.service.lego.IColorsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IElementsService;
 import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
 
@@ -26,6 +27,14 @@ import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
  *
  */
 public interface IRebrickableService {
+
+	/**
+	 * Colors service.
+	 * 
+	 * @return the colors service.
+	 */
+
+	IColorsService getColors();
 
 	/**
 	 * Elements service.
@@ -46,5 +55,6 @@ public interface IRebrickableService {
 	 * 
 	 * @param key key
 	 */
+
 	void setKey(String key);
 }

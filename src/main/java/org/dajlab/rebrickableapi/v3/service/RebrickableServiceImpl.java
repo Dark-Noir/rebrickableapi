@@ -15,8 +15,10 @@
  */
 package org.dajlab.rebrickableapi.v3.service;
 
+import org.dajlab.rebrickableapi.v3.service.lego.IColorsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IElementsService;
 import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
+import org.dajlab.rebrickableapi.v3.service.lego.impl.ColorsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ElementsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.SetsServiceImpl;
 
@@ -26,6 +28,11 @@ import org.dajlab.rebrickableapi.v3.service.lego.impl.SetsServiceImpl;
  *
  */
 public class RebrickableServiceImpl implements IRebrickableService {
+
+	/**
+	 * Colors service.
+	 */
+	private IColorsService colorsService;
 
 	/**
 	 * Elements service.
@@ -43,8 +50,18 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	 * @param privateKey your Rebrickable private key.
 	 */
 	public RebrickableServiceImpl(String privateKey) {
+		colorsService = new ColorsServiceImpl(privateKey);
 		elementsService = new ElementsServiceImpl(privateKey);
 		setsService = new SetsServiceImpl(privateKey);
+	}
+
+	/**
+	 * #{@inheritDoc}
+	 */
+	@Override
+	public IColorsService getColors() {
+
+		return colorsService;
 	}
 
 	/**
@@ -70,6 +87,7 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	 */
 	@Override
 	public void setKey(String key) {
+		colorsService.setKey(key);
 		elementsService.setKey(key);
 		setsService.setKey(key);
 	}

@@ -77,11 +77,9 @@ public abstract class AbstractRebrickableService implements IService {
 	 * @return the string representation of the JSON response
 	 * @throws RebrickableException exception
 	 */
-	protected String returnJsonResponse(Method method, String uri, Map<String, String> parameters)
-			throws RebrickableException {
+	protected String returnJsonResponse(Method method, String uri, Map<String, String> parameters) throws RebrickableException {
 
 		String baseUrl = API_BASE_URL + uri + "?key=" + key;
-
 		if (parameters != null) {
 			StringBuilder params = new StringBuilder();
 			for (Entry<String, String> param : parameters.entrySet()) {
@@ -89,8 +87,9 @@ public abstract class AbstractRebrickableService implements IService {
 			}
 			baseUrl = baseUrl + "&" + params;
 		}
-
+		System.out.println(baseUrl);
 		return callRestService(method, baseUrl);
+
 	}
 
 	/**
@@ -112,8 +111,7 @@ public abstract class AbstractRebrickableService implements IService {
 				throw new RebrickableException("Failed : HTTP error code : " + conn.getResponseCode());
 			}
 
-			return new BufferedReader(new InputStreamReader(conn.getInputStream())).lines()
-					.collect(Collectors.joining("\n"));
+			return new BufferedReader(new InputStreamReader(conn.getInputStream())).lines().collect(Collectors.joining("\n"));
 		} catch (Exception e) {
 			throw new RebrickableException(e.getMessage());
 		}
