@@ -1,29 +1,8 @@
-/*
- * Copyright 2020 Erik Amzallag
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
 package org.dajlab.rebrickableapi.v3.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * External ids.
- * 
- * @author Erik Amzallag
- * 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PartExternalIds {
 
@@ -32,6 +11,36 @@ public class PartExternalIds {
 	 */
 	@JsonProperty("BrickLink")
 	private String[] bricklink;
+
+	/**
+	 * BrickOwl ID.
+	 */
+	@JsonProperty("BrickOwl")
+	private String[] brickowl;
+
+	/**
+	 * Brickset ID.
+	 */
+	@JsonProperty("Brickset")
+	private String[] brickset;
+
+	/**
+	 * LEGO ID.
+	 */
+	@JsonProperty("LEGO")
+	private String[] lego;
+
+	/**
+	 * Peeron ID.
+	 */
+	@JsonProperty("Peeron")
+	private String[] peeron;
+
+	/**
+	 * LDraw ID.
+	 */
+	@JsonProperty("LDraw")
+	private String[] ldraw;
 
 	/**
 	 * @return the bricklink
@@ -47,4 +56,73 @@ public class PartExternalIds {
 		this.bricklink = bricklink;
 	}
 
+	/**
+	 * @return the brickowl
+	 */
+	public String[] getBrickowl() {
+		return brickowl;
+	}
+
+	/**
+	 * @param brickowl the brickowl to set
+	 */
+	public void setBrickowl(String[] brickowl) {
+		this.brickowl = brickowl;
+	}
+
+	/**
+	 * @return the brickset
+	 */
+	public String[] getBrickset() {
+		return brickset;
+	}
+
+	/**
+	 * @param brickset the brickset to set
+	 */
+	public void setBrickset(String[] brickset) {
+		this.brickset = brickset;
+	}
+
+	/**
+	 * @return the lego
+	 */
+	public String[] getLego() {
+		return lego;
+	}
+
+	/**
+	 * @param lego the lego to set
+	 */
+	public void setLego(String[] lego) {
+		this.lego = lego;
+	}
+
+	/**
+	 * @return the peeron
+	 */
+	public String[] getPeeron() {
+		return peeron;
+	}
+
+	/**
+	 * @param peeron the peeron to set
+	 */
+	public void setPeeron(String[] peeron) {
+		this.peeron = peeron;
+	}
+
+	/**
+	 * @return the ldraw
+	 */
+	public String[] getLdraw() {
+		return ldraw;
+	}
+
+	/**
+	 * @param ldraw the ldraw to set
+	 */
+	public void setLdraw(String[] ldraw) {
+		this.ldraw = ldraw;
+	}
 }
