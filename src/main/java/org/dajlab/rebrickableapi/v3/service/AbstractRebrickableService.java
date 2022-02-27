@@ -68,9 +68,9 @@ public abstract class AbstractRebrickableService implements IService {
 		if (parameters != null) {
 			StringBuilder params = new StringBuilder();
 			for (Entry<String, String> param : parameters.entrySet()) {
-				params.append(param.getKey() + "=" + param.getValue());
+				params.append("&" + param.getKey() + "=" + param.getValue());
 			}
-			baseUrl = baseUrl + "&" + params;
+			baseUrl = baseUrl + params;
 		}
 		System.out.println(baseUrl);
 		return callRestService(method, baseUrl);
