@@ -72,7 +72,7 @@ public class Part {
 	 * Printed part of.
 	 */
 	@JsonProperty("print_of")
-	private String[] printOf;
+	private String printOf;
 
 	/**
 	 * @return the partNum
@@ -231,14 +231,14 @@ public class Part {
 	/**
 	 * @return the printOf
 	 */
-	public String[] getPrintOf() {
+	public String getPrintOf() {
 		return printOf;
 	}
 
 	/**
 	 * @param printOf the printOf to set
 	 */
-	public void setPrintOf(String[] printOf) {
+	public void setPrintOf(String printOf) {
 		this.printOf = printOf;
 	}
 
