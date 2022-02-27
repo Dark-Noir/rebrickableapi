@@ -2,12 +2,14 @@ package org.dajlab.rebrickableapi.v3.service;
 
 import org.dajlab.rebrickableapi.v3.service.lego.IColorsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IElementsService;
+import org.dajlab.rebrickableapi.v3.service.lego.IMinifigsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IPartCategoriesService;
 import org.dajlab.rebrickableapi.v3.service.lego.IPartsService;
 import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IThemesService;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ColorsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ElementsServiceImpl;
+import org.dajlab.rebrickableapi.v3.service.lego.impl.MinifigsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.PartCategoriesServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.PartsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.SetsServiceImpl;
@@ -24,6 +26,11 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	 * Elements service.
 	 */
 	private IElementsService elementsService;
+
+	/**
+	 * Minifigs service.
+	 */
+	private IMinifigsService minifigsService;
 
 	/**
 	 * Part categories service.
@@ -53,6 +60,7 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public RebrickableServiceImpl(String privateKey) {
 		colorsService = new ColorsServiceImpl(privateKey);
 		elementsService = new ElementsServiceImpl(privateKey);
+		minifigsService = new MinifigsServiceImpl(privateKey);
 		partCategoriesService = new PartCategoriesServiceImpl(privateKey);
 		partsService = new PartsServiceImpl(privateKey);
 		setsService = new SetsServiceImpl(privateKey);
@@ -75,6 +83,15 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public IElementsService getElements() {
 
 		return elementsService;
+	}
+
+	/**
+	 * #{@inheritDoc}
+	 */
+	@Override
+	public IMinifigsService getMinifigs() {
+
+		return minifigsService;
 	}
 
 	/**
@@ -120,6 +137,7 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public void setKey(String key) {
 		colorsService.setKey(key);
 		elementsService.setKey(key);
+		minifigsService.setKey(key);
 		partCategoriesService.setKey(key);
 		partsService.setKey(key);
 		setsService.setKey(key);

@@ -2,6 +2,7 @@ package org.dajlab.rebrickableapi.v3.service;
 
 import org.dajlab.rebrickableapi.v3.service.lego.IColorsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IElementsService;
+import org.dajlab.rebrickableapi.v3.service.lego.IMinifigsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IPartCategoriesService;
 import org.dajlab.rebrickableapi.v3.service.lego.IPartsService;
 import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
@@ -29,6 +30,13 @@ public interface IRebrickableService {
 	 * @return the elements service.
 	 */
 	IElementsService getElements();
+
+	/**
+	 * Minifigs service.
+	 * 
+	 * @return the minifigs service.
+	 */
+	IMinifigsService getMinifigs();
 
 	/**
 	 * Part categories service.
