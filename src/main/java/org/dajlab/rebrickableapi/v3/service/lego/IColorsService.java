@@ -4,7 +4,7 @@ import org.dajlab.rebrickableapi.v3.vo.Color;
 import org.dajlab.rebrickableapi.v3.vo.RebrickableException;
 
 /**
- * Service for LEGO colors /api/v3/lego/colors/.
+ * Service for LEGO elements /api/v3/lego/colors/.
  * 
  *
  */
