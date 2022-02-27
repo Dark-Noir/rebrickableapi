@@ -28,15 +28,12 @@ public class ColorsServiceImpl extends AbstractRebrickableService implements ICo
 		super(privateKey);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public Color[] getAllColors() throws RebrickableException {
 
 		String uri = BASE_URI;
 		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("page_size", "9999");
+		map.put("page_size", "1000");
 		String output = returnJsonResponse(Method.GET, uri, map);
 		try {
 			if (output != null) {
