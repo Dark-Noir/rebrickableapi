@@ -2,10 +2,12 @@ package org.dajlab.rebrickableapi.v3.service;
 
 import org.dajlab.rebrickableapi.v3.service.lego.IColorsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IElementsService;
+import org.dajlab.rebrickableapi.v3.service.lego.IPartCategoriesService;
 import org.dajlab.rebrickableapi.v3.service.lego.ISetsService;
 import org.dajlab.rebrickableapi.v3.service.lego.IThemesService;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ColorsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ElementsServiceImpl;
+import org.dajlab.rebrickableapi.v3.service.lego.impl.PartCategoriesServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.SetsServiceImpl;
 import org.dajlab.rebrickableapi.v3.service.lego.impl.ThemesServiceImpl;
 
@@ -20,6 +22,11 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	 * Elements service.
 	 */
 	private IElementsService elementsService;
+
+	/**
+	 * Part categories service.
+	 */
+	private IPartCategoriesService partCategoriesService;
 
 	/**
 	 * Sets service.
@@ -39,6 +46,7 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public RebrickableServiceImpl(String privateKey) {
 		colorsService = new ColorsServiceImpl(privateKey);
 		elementsService = new ElementsServiceImpl(privateKey);
+		partCategoriesService = new PartCategoriesServiceImpl(privateKey);
 		setsService = new SetsServiceImpl(privateKey);
 		themesService = new ThemesServiceImpl(privateKey);
 	}
@@ -59,6 +67,15 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public IElementsService getElements() {
 
 		return elementsService;
+	}
+
+	/**
+	 * #{@inheritDoc}
+	 */
+	@Override
+	public IPartCategoriesService getPartCategories() {
+
+		return partCategoriesService;
 	}
 
 	/**
@@ -86,6 +103,7 @@ public class RebrickableServiceImpl implements IRebrickableService {
 	public void setKey(String key) {
 		colorsService.setKey(key);
 		elementsService.setKey(key);
+		partCategoriesService.setKey(key);
 		setsService.setKey(key);
 		themesService.setKey(key);
 	}
