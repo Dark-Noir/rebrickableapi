@@ -1,40 +1,31 @@
-/*
- * Copyright 2020 Erik Amzallag
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
 package org.dajlab.rebrickableapi.v3.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * Describes a color.
- * 
- * @author Erik Amzallag
- *
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Color {
 
 	/**
 	 * ID of the color.
 	 */
-	private Long id;
+	private int id;
+
 	/**
 	 * Name of the color.
 	 */
 	private String name;
+
+	/**
+	 * RGB color of the color.
+	 */
+	private String rgb;
+
+	/**
+	 * Is color transparent.
+	 */
+	@JsonProperty("is_trans")
+	private Boolean isTrans;
 
 	/**
 	 * Externals Ids.
@@ -45,14 +36,14 @@ public class Color {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -68,6 +59,34 @@ public class Color {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	/**
+	 * @return the rgb
+	 */
+	public String getRgb() {
+		return rgb;
+	}
+
+	/**
+	 * @param rgb the rgb to set
+	 */
+	public void setRgb(String rgb) {
+		this.rgb = rgb;
+	}
+
+	/**
+	 * @return the isTrans
+	 */
+	public Boolean getIsTrans() {
+		return isTrans;
+	}
+
+	/**
+	 * @param isTrans the isTrans to set
+	 */
+	public void setIsTrans(Boolean isTrans) {
+		this.isTrans = isTrans;
 	}
 
 	/**
