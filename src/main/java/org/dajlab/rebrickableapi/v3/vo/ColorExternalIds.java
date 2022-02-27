@@ -1,29 +1,8 @@
-/*
- * Copyright 2020 Erik Amzallag
- * 
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- * 
- * http://www.apache.org/licenses/LICENSE-2.0
- * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
 package org.dajlab.rebrickableapi.v3.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/**
- * External ids.
- * 
- * @author Erik Amzallag
- * 
- */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ColorExternalIds {
 
@@ -34,10 +13,28 @@ public class ColorExternalIds {
 	private ExternalId bricklink;
 
 	/**
+	 * BrickOwl ID.
+	 */
+	@JsonProperty("BrickOwl")
+	private ExternalId brickowl;
+
+	/**
 	 * LEGO ID.
 	 */
 	@JsonProperty("LEGO")
 	private ExternalId lego;
+
+	/**
+	 * Peeron ID.
+	 */
+	@JsonProperty("Peeron")
+	private ExternalId peeron;
+
+	/**
+	 * LDraw ID.
+	 */
+	@JsonProperty("LDraw")
+	private ExternalId ldraw;
 
 	/**
 	 * @return the bricklink
@@ -54,6 +51,20 @@ public class ColorExternalIds {
 	}
 
 	/**
+	 * @return the brickowl
+	 */
+	public ExternalId getBrickowl() {
+		return brickowl;
+	}
+
+	/**
+	 * @param brickowl the brickowl to set
+	 */
+	public void setBrickowl(ExternalId brickowl) {
+		this.brickowl = brickowl;
+	}
+
+	/**
 	 * @return the lego
 	 */
 	public ExternalId getLego() {
@@ -65,6 +76,34 @@ public class ColorExternalIds {
 	 */
 	public void setLego(ExternalId lego) {
 		this.lego = lego;
+	}
+
+	/**
+	 * @return the peeron
+	 */
+	public ExternalId getPeeron() {
+		return peeron;
+	}
+
+	/**
+	 * @param peeron the peeron to set
+	 */
+	public void setPeeron(ExternalId peeron) {
+		this.peeron = peeron;
+	}
+
+	/**
+	 * @return the ldraw
+	 */
+	public ExternalId getLdraw() {
+		return ldraw;
+	}
+
+	/**
+	 * @param ldraw the ldraw to set
+	 */
+	public void setLdraw(ExternalId ldraw) {
+		this.ldraw = ldraw;
 	}
 
 }
