@@ -42,6 +42,7 @@ public class ColorsServiceImpl extends AbstractRebrickableService implements ICo
 				output = (String) json.get("results").toString();
 
 				ObjectMapper mapper = new ObjectMapper();
+
 				return mapper.readValue(output, Color[].class);
 			}
 		} catch (Exception e) {

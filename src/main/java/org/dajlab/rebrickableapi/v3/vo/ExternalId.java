@@ -1,10 +1,12 @@
 package org.dajlab.rebrickableapi.v3.vo;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ExternalId {
+public class ExternalId implements Serializable {
 
 	/**
 	 * External Ids.

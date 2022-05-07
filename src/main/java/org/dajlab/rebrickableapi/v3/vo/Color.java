@@ -1,10 +1,12 @@
 package org.dajlab.rebrickableapi.v3.vo;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Color {
+public class Color implements Serializable, Comparable<Color> {
 
 	/**
 	 * ID of the color.
@@ -101,6 +103,15 @@ public class Color {
 	 */
 	public void setExternalIds(ColorExternalIds externalIds) {
 		this.externalIds = externalIds;
+	}
+
+	@Override
+	public int compareTo(Color o) {
+
+		if (getName().startsWith("[")) {
+			return -1;
+		}
+		return getName().compareTo(o.getName());
 	}
 
 }
