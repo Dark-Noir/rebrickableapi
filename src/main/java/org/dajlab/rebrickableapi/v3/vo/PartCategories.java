@@ -8,6 +8,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PartCategories implements Serializable {
 
+	private static final long serialVersionUID = -5429444024383339259L;
+
 	/**
 	 * Category Id
 	 */
@@ -32,13 +34,6 @@ public class PartCategories implements Serializable {
 	}
 
 	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	/**
 	 * @return the name
 	 */
 	public String getName() {
@@ -46,17 +41,24 @@ public class PartCategories implements Serializable {
 	}
 
 	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
 	 * @return the partCount
 	 */
 	public int getPartCount() {
 		return partCount;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	/**
