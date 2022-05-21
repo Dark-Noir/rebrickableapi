@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Themes implements Serializable {
+public class Themes implements Serializable, Comparable<Themes> {
 
 	/**
 	 * Theme Id.
@@ -64,6 +64,15 @@ public class Themes implements Serializable {
 	 */
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public int compareTo(Themes o) {
+
+		if (getName().startsWith("[")) {
+			return -1;
+		}
+		return getName().compareTo(o.getName());
 	}
 
 }
