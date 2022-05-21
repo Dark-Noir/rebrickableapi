@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PartCategories implements Serializable {
+public class PartCategories implements Serializable, Comparable<PartCategories> {
 
 	private static final long serialVersionUID = -5429444024383339259L;
 
@@ -66,6 +66,15 @@ public class PartCategories implements Serializable {
 	 */
 	public void setPartCount(int partCount) {
 		this.partCount = partCount;
+	}
+
+	@Override
+	public int compareTo(PartCategories o) {
+
+		if (getName().startsWith("[")) {
+			return -1;
+		}
+		return getName().compareTo(o.getName());
 	}
 
 }
